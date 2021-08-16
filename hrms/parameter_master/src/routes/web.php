@@ -1,0 +1,29 @@
+<?php
+
+/** @var \Laravel\Lumen\Routing\Router $router */
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It is a breeze. Simply tell Lumen the URIs it should respond to
+| and give it the Closure to call when that URI is requested.
+|
+*/
+
+$router->get('/', function () use ($router) {
+    return $router->app->version();
+});
+
+
+$router->get("/parameter","ParameterMasterApi@index");
+
+$router->get("/parameter/{id}","ParameterMasterApi@show");
+
+$router->post("/parameter","ParameterMasterApi@store");
+
+$router->put("/parameter/{id}","ParameterMasterApi@update");
+
+$router->delete("/parameter/{id}","ParameterMasterApi@destroy");
