@@ -40,7 +40,7 @@ class EmployeeAllocationHeadApi extends Controller
 
     public function store(Request $request)
     {
-      $this->response = Employee_allocation_head::where("employee_id",$request['employee_id']);
+      $this->response = Employee_allocation_head::where("employee_id",$request['employee_id'])->get();
       if(count($this->response) == 0)
       {
         $this->response = Employee_allocation_head::create($request->all());
@@ -54,7 +54,7 @@ class EmployeeAllocationHeadApi extends Controller
            return response(array("notice"=>"Something went wrong try again"),404)->header("Content-Type","application/json");
         }
       }
-      
+
       else
       {
          return response(array("notice"=>"Duplicate Entry"),409)->header("Content-Type","application/json");

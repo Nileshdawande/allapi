@@ -19,7 +19,7 @@ class CreateCompanyAnnualLeavesMastersTable extends Migration
             $table->string("year");
             $table->integer("branch_id")->unique();
             $table->date("annual_leave_date");
-            $table->integer("leave_on_account_of");
+            $table->string("leave_on_account_of");
             $table->integer("leave_cancelled");
             $table->mediumText("reason_for_cancellation");
         });

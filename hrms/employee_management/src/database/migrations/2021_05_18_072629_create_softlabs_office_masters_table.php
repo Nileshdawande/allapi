@@ -32,7 +32,7 @@ class CreateSoftlabsOfficeMastersTable extends Migration
             $table->string("office_contact_person");
             $table->bigInteger("office_con_per_phoneno");
             $table->string("office_status");
-            $table->date("office_end_date");
+            $table->date("office_end_date")->nullable();
         });
     }
 

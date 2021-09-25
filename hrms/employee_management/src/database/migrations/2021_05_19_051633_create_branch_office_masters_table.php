@@ -17,10 +17,10 @@ class CreateBranchOfficeMastersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer("branch_id")->unique();
-            $table->integer("office_id")->unique();
+            $table->integer("office_id");
             $table->string("status");
             $table->date("date_of_activation");
-            $table->date("date_of_deactivation");
+            $table->date("date_of_deactivation")->nullable();
         });
     }
 

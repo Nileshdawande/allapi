@@ -17,7 +17,7 @@ class CreateEmployeeSalariesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer("employee_id");
-            $table->year("month_of_year");
+            $table->string("month_of_year");
             $table->date("date_of_salary_processing");
             $table->integer("no_of_expected_wroking_days");
             $table->integer("no_of_days_worked");
