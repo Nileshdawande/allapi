@@ -52,14 +52,14 @@ class UserDetailsApi extends Controller
            $this->last_id = 1;
         }
 
-        $this->tempdata = array('url'=>'hrms');
+        $this->tempdata = array('url'=>'pms');
         $this->formdata = $request->all();
         $this->formdata['created_by'] = $this->last_id;
         $this->formdata['updated_by'] = $this->last_id;
         $this->formdata['password'] = md5($this->formdata['password']);
         $this->formdata['access'] = json_encode([$this->tempdata]);
         $this->formdata['status'] = 1;
-        $this->formdata['role'] = "management";
+        $this->formdata['role'] = "employee";
 
         $this->response = User_detail::create($this->formdata);
         if($this->response)
